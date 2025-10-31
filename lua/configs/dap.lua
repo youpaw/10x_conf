@@ -58,6 +58,31 @@ dap.configurations.c = dap.configurations.cpp
 
 ui.setup()
 
+vim.fn.sign_define("DapBreakpoint", {
+  text = "●",
+  texthl = "DapBreakpoint",
+  linehl = "",
+  numhl = "",
+})
+
+vim.fn.sign_define("DapBreakpointRejected", {
+  text = "◌",
+  texthl = "DapBreakpointRejected",
+  linehl = "",
+  numhl = "",
+})
+
+vim.fn.sign_define("DapStopped", {
+  text = "→",
+  texthl = "DapStopped",
+  linehl = "DapStoppedLine",
+  numhl = "",
+})
+
+vim.api.nvim_set_hl(0, "DapBreakpoint",        { fg = "#ff5555" })   -- Red
+vim.api.nvim_set_hl(0, "DapBreakpointRejected",{ fg = "#ffaa00" })   -- Orange
+vim.api.nvim_set_hl(0, "DapStopped",           { fg = "#00ff99" })   -- Green arrow
+
 dap.listeners.before.attach.dapui_config = function()
 	ui.open()
 end
