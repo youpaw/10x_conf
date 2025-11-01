@@ -46,6 +46,7 @@ dap.configurations.cpp = {
     miDebuggerServerAddress = 'localhost:5678',
     miDebuggerPath = '/usr/bin/gdb',
     cwd = '${workspaceFolder}',
+    stopAtEntry = false,
     program = function()
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
