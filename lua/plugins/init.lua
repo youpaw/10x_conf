@@ -42,6 +42,14 @@ return {
       require "configs.dap"
     end,
   },
+  {
+    "nvim-mini/mini.surround",
+    version = false,
+    event = "VeryLazy",
+    config = function()
+      require("mini.surround").setup()
+    end,
+  },
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
